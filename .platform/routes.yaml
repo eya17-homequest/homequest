@@ -1,0 +1,5 @@
+"https://api.{default}/":
+    type: upstream
+    upstream: "api:http"
+    cache:
+        enabled: false

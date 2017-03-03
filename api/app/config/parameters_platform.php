@@ -1,9 +1,22 @@
 <?php
-$relationships = getenv("PLATFORM_RELATIONSHIPS");
+
+declare(strict_types=1);
+
+/*
+ * This file is part of the HomeQuest app.
+ *
+ * (c) Patrik Karisch <patrik@karisch.guru>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+$relationships = getenv('PLATFORM_RELATIONSHIPS');
 if (!$relationships) {
     return;
 }
-$relationships = json_decode(base64_decode($relationships), true);
+
+$relationships = json_decode(base64_decode($relationships, true), true);
 foreach ($relationships['database'] as $endpoint) {
     if (empty($endpoint['query']['is_master'])) {
         continue;

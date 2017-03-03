@@ -1,7 +1,13 @@
 {
-    "name": "patkar/api",
-    "license": "proprietary",
+    "name": "homequest/homequest",
+    "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "Patrik Karisch",
+            "email": "patrik@karisch.guru"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -17,21 +23,23 @@
         }
     },
     "require": {
-        "php": ">=5.5.9",
-        "symfony/symfony": "3.2.*",
-        "doctrine/orm": "^2.5",
+        "php": "^7.1",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-cache-bundle": "^1.2",
-        "symfony/swiftmailer-bundle": "^2.3.10",
-        "symfony/monolog-bundle": "^3.0.2",
-        "symfony/polyfill-apcu": "^1.0",
+        "doctrine/orm": "^2.5",
+        "incenteev/composer-parameter-handler": "^2.0",
+        "proophsoftware/prooph-bundle": "^0.1.2",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "^2.0",
-        "twig/twig": "^1.0||^2.0",
-        "proophsoftware/prooph-bundle": "^0.1.2"
+        "symfony/monolog-bundle": "^3.0.2",
+        "symfony/polyfill-apcu": "^1.0",
+        "symfony/swiftmailer-bundle": "^2.3.10",
+        "symfony/symfony": "3.2.*",
+        "twig/twig": "^1.0||^2.0"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.1",
+        "phpspec/phpspec": "^3.2",
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0"
     },
@@ -51,6 +59,12 @@
             "@symfony-scripts"
         ]
     },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
     "extra": {
         "symfony-app-dir": "app",
         "symfony-bin-dir": "bin",
@@ -60,7 +74,6 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": null
+        }
     }
 }

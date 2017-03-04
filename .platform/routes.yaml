@@ -1,3 +1,9 @@
+"https://{default}/":
+    type: upstream
+    upstream: "frontend:http"
+    cache:
+        enabled: false
+
 "https://api.{default}/":
     type: upstream
     upstream: "api:http"

@@ -12,9 +12,10 @@ dependencies:
 web:
     locations:
         "/":
-            passthru: false
             root: "dist"
             allow: true
+            passthru: false
+            index: ['index.html']
 
 # The size of the persistent disk of the application (in MB).
 disk: 128
